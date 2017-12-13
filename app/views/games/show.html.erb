@@ -1,19 +1,22 @@
-<p id="notice"><%= notice %></p>
+<%= link_to root_path, class: "orange_font" do %>
+    <span style="font-size: 3em; margin-top: 10px;" class="glyphicon glyphicon-circle-arrow-left back_to_font_feed_arrow"></span>
+<% end %>
+<div class="container" style="padding-top: 40px;">
+	<div class="col-md-6 col-md-push-3 row">
+		<%= image_tag (@game.image_url(:thumb).to_s), class: "img img-responsive" %>
+	</div>
+	<div class="row col-md-6">
+	  <strong><%= @game.name %></strong>
+	</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @game.name %>
-</p>
+	<div class="row col-md-6" style="padding-top: 30px; padding-bottom: 65px;">
+	  <%= @game.description %>
+	</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @game.description %>
-</p>
+	<%= link_to "Try this gem out for a week", new_charge_path(:game => @game.name), class:"button col-md-3", style:"text-align:center;" %>
 
-<p>
-  <strong>Secret:</strong>
-  <%= @game.secret %>
-</p>
+	<%#	 link_to "Subsribe", new_subscription_path, class: "btn btn-primary" %>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+	<% link_to 'Edit', edit_game_path(@game) %>
+	<% link_to 'Back', games_path %>
+</div>

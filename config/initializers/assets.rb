@@ -8,4 +8,4 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-Rails.application.config.assets.precompile += %w( font-style.css app.js plugins.js jquery-1.11.1.min.js style.css font-awesome.min html5.js )
+Rails.application.config.assets.precompile += %w( font-style.css app.js plugins.js jquery-1.11.1.min.js style.css font-awesome.min html5.js subscriptions.js )

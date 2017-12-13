@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    
+    <title>GameGems - MiniCorp Stack</title>
+
+    <!-- Loading third party fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,700|" rel="stylesheet" type="text/css">
+    <%= stylesheet_link_tag "font-style" %>
+    <%= stylesheet_link_tag "font-awesome.min" %>
+    <%= stylesheet_link_tag "style" %>
+
+    <!--[if lt IE 9]>
+    <%= javascript_include_tag "respond" %>
+    <%= javascript_include_tag "html5" %>
+    <![endif]-->
+
+  </head>
+  <body class="slider-collapse">
+    <div id="site-content">
+      <div class="site-header">
+        <div class="container">
+          <a href="/" id="branding">
+            <%= image_tag "http://i.cubeupload.com/3WpIlE.png", class: "minicorp_logo img img-responsive col-md-5" %>
+          </a> <!-- #branding -->
+
+          <div class="right-section pull-right">
+            <%# link_to "ryanlink to new", new_game_path %>
+            <% if !user_signed_in? %>
+              <%= link_to "Sign up", new_user_registration_path %>
+              <%= link_to "Log in", new_user_session_path %>
+            <% else %>
+              <%= link_to "Account", edit_user_registration_path %>
+              <%= link_to "Log out", destroy_user_session_path,  method: :delete %>
+            <% end %>
+            <%= link_to "Games", games_path %>
+
+          </div> <!-- .right-section -->
+
+                    <div class="main-navigation" style="display: none;">
+            <button class="toggle-menu"><i class="fa fa-bars"></i></button>
+            <ul class="menu">
+              <li class="menu-item home current-menu-item"><a href="index.html"><i class="icon-home"></i></a></li>
+              <li class="menu-item"><a href="products.html">Accessories</a></li>
+              <li class="menu-item"><a href="products.html">Promotions</a></li>
+              <li class="menu-item"><a href="products.html">PC</a></li>
+              <li class="menu-item"><a href="products.html">Playstation</a></li>
+              <li class="menu-item"><a href="products.html">Xbox</a></li>
+              <li class="menu-item"><a href="products.html">Wii</a></li>
+            </ul> <!-- .menu -->
+            <div class="search-form">
+              <label><img src=""></label>
+              <input type="text" placeholder="Search...">
+            </div> <!-- .search-form -->
+
+            <div class="mobile-navigation"></div> <!-- .mobile-navigation -->
+          </div> <!-- .main-navigation -->
+        </div> <!-- .container -->
+      </div> <!-- .site-header -->

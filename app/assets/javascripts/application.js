@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function scrollToGames(){
+	$('html, body').animate({
+    scrollTop: $(".page").offset().top
+}, 1000);
+}

@@ -1,232 +1,44 @@
-<!-- <p id="notice"><%= notice %></p>
-
-<h1>Listing Games</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Secret</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= game.name %></td>
-        <td><%= game.description %></td>
-        <td><%= game.secret %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br> -->
-
-<%# link_to 'New Game', new_game_path %>
-
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
-    
-    <title>MiniCorp Stack</title>
-
-    <!-- Loading third party fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,700|" rel="stylesheet" type="text/css">
-    <%= stylesheet_link_tag "font-style" %>
-    <%= stylesheet_link_tag "font-awesome.min" %>
-    <%= stylesheet_link_tag "style" %>
-
-    
-    
-    <!--[if lt IE 9]>
-    <%= javascript_include_tag "respond" %>
-    <%= javascript_include_tag "html5" %>
-    <![endif]-->
-
-  </head>
-  <body class="slider-collapse">
-    <div id="site-content">
-      <div class="site-header">
+<main class="main-content">
         <div class="container">
-          <a href="index.html" id="branding">
-            <img src="" alt="" class="logo">
-            <div class="logo-text">
-              <h1 class="site-title">MiniCorp Stack</h1>
-              <small class="site-description">Ryan Dowler</small>
-            </div>
-          </a> <!-- #branding -->
-
-          <div class="right-section pull-right">
-            <a href="cart.html" class="cart"><i class="icon-cart"></i> 0 items in cart</a>
-            <a href="#" class="login-button">Login/Register</a>
-          </div> <!-- .right-section -->
-
-          <div class="main-navigation">
-            <button class="toggle-menu"><i class="fa fa-bars"></i></button>
-            <ul class="menu">
-              <li class="menu-item home current-menu-item"><a href="index.html"><i class="icon-home"></i></a></li>
-              <li class="menu-item"><a href="products.html">Accessories</a></li>
-              <li class="menu-item"><a href="products.html">Promotions</a></li>
-              <li class="menu-item"><a href="products.html">PC</a></li>
-              <li class="menu-item"><a href="products.html">Playstation</a></li>
-              <li class="menu-item"><a href="products.html">Xbox</a></li>
-              <li class="menu-item"><a href="products.html">Wii</a></li>
-            </ul> <!-- .menu -->
-            <div class="search-form">
-              <label><img src=""></label>
-              <input type="text" placeholder="Search...">
-            </div> <!-- .search-form -->
-
-            <div class="mobile-navigation"></div> <!-- .mobile-navigation -->
-          </div> <!-- .main-navigation -->
-        </div> <!-- .container -->
-      </div> <!-- .site-header -->
-
-      <div class="home-slider">
-        <ul class="slides">
-          <li data-bg-image="slide-1.jpg">
-            <div class="container">
-              <div class="slide-content">
-                <h2 class="slide-title">Kill Zone 3</h2>
-                <small class="slide-subtitle">$190.00</small>
-                
-                <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-                
-                <a href="cart.html" class="button">Add to cart</a>
-              </div>
-
-              <img src="" class="slide-image">
-            </div>
-          </li>
-          <li data-bg-image="slide-2.jpg">
-            <div class="container">
-              <div class="slide-content">
-                <h2 class="slide-title">Kill Zone 3</h2>
-                <small class="slide-subtitle">$190.00</small>
-                
-                <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-                
-                <a href="cart.html" class="button">Add to cart</a>
-              </div>
-
-              <img src="" class="slide-image">
-            </div>
-          </li>
-          <li data-bg-image="slide-3.jpg">
-            <div class="container">
-              <div class="slide-content">
-                <h2 class="slide-title">Kill Zone 3</h2>
-                <small class="slide-subtitle">$190.00</small>
-                
-                <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-                
-                <a href="cart.html" class="button">Add to cart</a>
-              </div>
-
-              <img src="" class="slide-image">
-            </div>
-          </li>
-        </ul> <!-- .slides -->
-      </div> <!-- .home-slider -->
-
-      <main class="main-content">
-        <div class="container">
-          <div class="page">
+          <div class="col-md-12" style="text-align: center; padding-top: 30px;">
+            <h2>Ever been told a game is an absolute gem? </h2>
+            <h3> Try it before you buy it </h3>
+              <a onclick="scrollToGames();">
+                <i class="glyphicon glyphicon-arrow-down" style="font-size: 2em;"></i>
+              </a> 
+          </div>
+          <div class="page" style="margin-top: 150px;">
             <section>
               <header>
-                <h2 class="section-title">New Products</h2>
-                <a href="#" class="all">Show All</a>
+                <h2 class="section-title">Popular Games</h2>
+                <%= link_to "Show All", games_path, class: "all" %>
               </header>
-
               <div class="product-list">
-                <div class="product">
-                  <div class="inner-product">
-                    <div class="figure-image">
-                      <a href="single.html"><img src="" alt="Game 1"></a>
-                    </div>
-                    <h3 class="product-title"><a href="#">Alpha Protocol</a></h3>
-                    <small class="price">$19.00</small>
-                    <p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-                    <a href="cart.html" class="button">Add to cart</a>
-                    <a href="#" class="button muted">Read Details</a>
-                  </div>
-                </div> <!-- .product -->
-
-                <div class="product">
-                  <div class="inner-product">
-                    <div class="figure-image">
-                      <a href="single.html"><img src="" alt="Game 2"></a>
-                    </div>
-                    <h3 class="product-title"><a href="#">Grand Theft Auto V</a></h3>
-                    <small class="price">$19.00</small>
-                    <p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-                    <a href="cart.html" class="button">Add to cart</a>
-                    <a href="#" class="button muted">Read Details</a>
-                  </div>
-                </div> <!-- .product -->
-
-                <div class="product">
-                  <div class="inner-product">
-                    <div class="figure-image">
-                      <a href="single.html"><img src="" alt="Game 3"></a>
-                    </div>
-                    <h3 class="product-title"><a href="#">Need for Speed rivals</a></h3>
-                    <small class="price">$19.00</small>
-                    <p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-                    <a href="cart.html" class="button">Add to cart</a>
-                    <a href="#" class="button muted">Read Details</a>
-                  </div>
-                </div> <!-- .product -->
-
-                <div class="product">
-                  <div class="inner-product">
-                    <div class="figure-image">
-                      <a href="single.html"><img src="" alt="Game 4"></a>
-                    </div>
-                    <h3 class="product-title"><a href="#">Big game hunter</a></h3>
-                    <small class="price">$19.00</small>
-                    <p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-                    <a href="cart.html" class="button">Add to cart</a>
-                    <a href="#" class="button muted">Read Details</a>
-                  </div>
-                </div> <!-- .product -->
-
+                <% @games.each do |g|%>
+                  <%= link_to game_path(g) do %>
+                    <div class="product">
+                      <div class="inner-product">
+                        <div class="figure-image">
+                          <%= image_tag (g.image_url(:thumb).to_s), class: "img img-responsive" %>
+                        </div>
+                        <h3 class="product-title"><a href="#"><%= link_to g.name, game_path(g) %></a></h3>
+                        <small class="price">€5.00</small>
+                        <p><%= truncate(g.description, length: 125, omission: '. . .') %></p>
+                        <%= link_to "View", game_path(g), class:"button" %>
+                      </div>
+                    </div> <!-- .product -->
+                  <% end %>
+                <% end %>
               </div> <!-- .product-list -->
-
             </section>
 
             <section>
               <header>
-                <h2 class="section-title">promotion</h2>
+                <h2 class="section-title">Promotion</h2>
                 <a href="#" class="all">Show All</a>
               </header>
-
               <div class="product-list">
-                
-                <div class="product">
-                  <div class="inner-product">
-                    <div class="figure-image">
-                      <a href="single.html"><img src="" alt="Game 1"></a>
-                    </div>
-                    <h3 class="product-title"><a href="#">Watch Dogs</a></h3>
-                    <small class="price">$19.00</small>
-                    <p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-                    <a href="cart.html" class="button">Add to cart</a>
-                    <a href="#" class="button muted">Read Details</a>
-                  </div>
-                </div> <!-- .product -->
-                
-                
+
                 <div class="product">
                   <div class="inner-product">
                     <div class="figure-image">
@@ -239,8 +51,7 @@
                     <a href="#" class="button muted">Read Details</a>
                   </div>
                 </div> <!-- .product -->
-                
-                
+      
                 <div class="product">
                   <div class="inner-product">
                     <div class="figure-image">
@@ -254,7 +65,6 @@
                   </div>
                 </div> <!-- .product -->
                 
-                
                 <div class="product">
                   <div class="inner-product">
                     <div class="figure-image">
@@ -267,9 +77,7 @@
                     <a href="#" class="button muted">Read Details</a>
                   </div>
                 </div> <!-- .product -->
-                
-              </div> <!-- .product-list -->
-
+              </div> <!-- .product-list --> 
             </section>
           </div>
         </div> <!-- .container -->

@@ -1,0 +1,22 @@
+<% @gameVal = params[:game] %>
+<div class="col-md-4 col-md-push-5" style="padding-top: 200px;">
+<%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>This will set you back: €5</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.application.secrets.stripe_public_key %>"
+          data-name="<%= params[:game] %>"
+          data-description="Game Rental"
+          data-amount="500"
+          data-locale="auto"></script>
+<% end %>
+</div>

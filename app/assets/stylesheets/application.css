@@ -17,3 +17,12 @@
  .navBar{
  	background-color: green;
  }
+
+ .minicorp_logo{
+ 	width: 50%;
+ 	margin-bottom: -50px;
+ }
+
+ #branding:hover{
+ 	text-decoration: none;
+ }
